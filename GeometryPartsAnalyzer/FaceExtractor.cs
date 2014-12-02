@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.DB;
 
@@ -63,9 +64,9 @@ namespace hsbSoft.Revit
     /// <returns>faces</returns>
     public FaceArray GetFacesFrom( GeometryElement geoElement )
     {
-      GeometryObjectArray geoElems = geoElement.Objects;
+      //GeometryObjectArray geoElems = geoElement.Objects;
 
-      foreach( object o in geoElems )
+      foreach( object o in geoElement )
       {
         Solid geoSolid = o as Solid;
         if( null == geoSolid )
@@ -75,10 +76,12 @@ namespace hsbSoft.Revit
             continue;
           GeometryElement geoElement2 = instance.SymbolGeometry;
           _matrix = instance.Transform;
-          GeometryObjectArray geoElems2 = geoElement2.Objects;
-          if( geoElems2 == null )
-            continue;
-          if( geoElems2.Size == 0 )
+          //GeometryObjectArray geoElems2 = geoElement2.Objects;
+          //if( geoElems2 == null )
+          //  continue;
+          //if( geoElems2.Size == 0 )
+          //  continue;
+          if( 0 == geoElement2.Count<GeometryObject>() )
             continue;
           return GetFacesFrom( geoElement2 );
         }

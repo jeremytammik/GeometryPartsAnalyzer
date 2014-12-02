@@ -76,7 +76,7 @@ namespace hsbSoft.Revit
 
           foreach( ElementId partId in partIds )
           {
-            Element part = doc.get_Element( partId );
+            Element part = doc.GetElement( partId );
 
             bottomFacesPts.Add( 
               GetBottomFacePoints( part ) );
