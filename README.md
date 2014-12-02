@@ -6,6 +6,7 @@ Revit add-in analysing detailed part layer geometry by splitting selected walls 
 Detailed descriptions of this add-in and related topics are provided by The Building Coder:
 
 - [Retrieving Detailed Wall Layer Geometry](http://thebuildingcoder.typepad.com/blog/2011/10/retrieving-detailed-wall-layer-geometry.html)
+- [Migrating GeometryPartsAnalyzer to Revit 2015](http://thebuildingcoder.typepad.com/blog/2014/12/devdays-conference-at-autodesk-university.html#1)
 - [Splitting an Element into Parts](http://thebuildingcoder.typepad.com/blog/about-the-author.html#5.39)
 - [Wall Layers](http://thebuildingcoder.typepad.com/blog/about-the-author.html#5.12)
 
