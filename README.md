@@ -11,6 +11,11 @@ Detailed descriptions of this add-in and related topics are provided by The Buil
 
 You can also use this as a handy reference to compare the migration steps required [from Revit 2012 to Revit 2014](https://github.com/jeremytammik/GeometryPartsAnalyzer/compare/2012.0.0.0...2014.0.0.0) and [from Revit 2014 to Revit 2015](https://github.com/jeremytammik/GeometryPartsAnalyzer/compare/2014.0.0.0...2015.0.0.0).
 
+Author
+------
+
+Jeremy Tammik, [The Building Coder](http://thebuildingcoder.typepad.com), Autodesk Inc.
+
 License
 -------
 
