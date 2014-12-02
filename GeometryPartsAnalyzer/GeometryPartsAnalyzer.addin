@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>GeometryPartsAnalyzer.dll</Assembly>
+    <ClientId>51E14841-9486-495C-94A4-3452EAC2C511</ClientId>
+    <FullClassName>hsbSoft.Revit.CmdGeometryParts</FullClassName>
+    <Text>Geometry Parts Analyzer</Text>
+    <Description>Geometry Parts Analyzer</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <VendorId>HSB</VendorId>
+  </AddIn>
+</RevitAddIns>
