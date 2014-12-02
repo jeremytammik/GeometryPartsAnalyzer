@@ -7,16 +7,10 @@ namespace hsbSoft.Revit
   public class ModelLineCreator
   {
     Document _doc;
-    //private Application _app;
-    //private Autodesk.Revit.Creation.Application _createApp;
-    //private Autodesk.Revit.Creation.Document _createDoc;
 
     public ModelLineCreator( Document doc )
     {
       _doc = doc;
-      //_app = doc.Application;
-      //_createApp = _app.Create;
-      //_createDoc = doc.Create;
     }
 
     /// <summary>
@@ -43,14 +37,11 @@ namespace hsbSoft.Revit
 
       XYZ norm = v.CrossProduct( w ).Normalize();
 
-      //Plane plane = _createApp.NewPlane( norm, startPoint );
       Plane plane = new Plane( norm, startPoint );
 
-      //SketchPlane sketchPlane = SketchPlane.Create( _createDoc, plane );
       SketchPlane sketchPlane = SketchPlane.Create( 
         _doc, plane );
 
-      //_createApp.NewLine( startPoint, endPoint, bound ),
       Line line = bound
         ? Line.CreateBound( startPoint, endPoint )
         : Line.CreateUnbound( startPoint, endPoint );
