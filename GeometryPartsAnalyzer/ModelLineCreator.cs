@@ -6,15 +6,17 @@ namespace hsbSoft.Revit
 {
   public class ModelLineCreator
   {
-    private Application _app;
-    private Autodesk.Revit.Creation.Application _createApp;
-    private Autodesk.Revit.Creation.Document _createDoc;
+    Document _doc;
+    //private Application _app;
+    //private Autodesk.Revit.Creation.Application _createApp;
+    //private Autodesk.Revit.Creation.Document _createDoc;
 
     public ModelLineCreator( Document doc )
     {
-      _app = doc.Application;
-      _createApp = _app.Create;
-      _createDoc = doc.Create;
+      _doc = doc;
+      //_app = doc.Application;
+      //_createApp = _app.Create;
+      //_createDoc = doc.Create;
     }
 
     /// <summary>
@@ -41,13 +43,20 @@ namespace hsbSoft.Revit
 
       XYZ norm = v.CrossProduct( w ).Normalize();
 
-      Plane plane = _createApp.NewPlane( norm, startPoint );
+      //Plane plane = _createApp.NewPlane( norm, startPoint );
+      Plane plane = new Plane( norm, startPoint );
 
-      SketchPlane sketchPlane = _createDoc.NewSketchPlane( plane );
+      //SketchPlane sketchPlane = SketchPlane.Create( _createDoc, plane );
+      SketchPlane sketchPlane = SketchPlane.Create( 
+        _doc, plane );
 
-      return _createDoc.NewModelCurve(
-        _createApp.NewLine( startPoint, endPoint, bound ),
-        sketchPlane ) as ModelLine;
+      //_createApp.NewLine( startPoint, endPoint, bound ),
+      Line line = bound
+        ? Line.CreateBound( startPoint, endPoint )
+        : Line.CreateUnbound( startPoint, endPoint );
+
+      return _doc.Create.NewModelCurve( 
+        line, sketchPlane ) as ModelLine;
     }
   }
 }
